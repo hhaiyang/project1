@@ -1,0 +1,77 @@
+//
+//  PrefixHeader.pch
+//  BusinessNet
+//
+//  Created by Roy on 15/10/18.
+//  Copyright © 2015年 Royge. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+//#define APP_ID    @"xxxxxx"
+
+
+////屏幕宽度
+#define UI_SCREEN_HEIGHT                ([[UIScreen mainScreen] bounds].size.height)
+//
+////屏幕高度
+#define UI_SCREEN_WIDTH                ([[UIScreen mainScreen] bounds].size.width)
+
+//颜色
+#define rgba(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define WhiteColor(r,a) [UIColor colorWithWhite:r alpha:a]
+
+#define hex(hexval) [UIColor colorFromHexVal:hexval]
+
+#define SharedDelegate  ((AppDelegate*)[UIApplication sharedApplication].delegate)
+#define SharedTabBar    (SharedDelegate.tabBarController)
+
+#define DOC_PATH    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) safeObjectAtIndex:0]
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO) || ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1134), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6P ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO) || ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen] currentMode].size) : NO)
+#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define SYSTEM_VERSION_GREATER_THAN(a) [[UIDevice currentDevice].systemVersion floatValue] >= a
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+
+
+#ifdef DEBUG
+# define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
+
+#import "Constants.h"
+#import "NetworkingHelper.h"
+#import "Libs.h"
+#import "Model.h"
+#import "API.h"
+#import "Session.h"
+#import "BaseController.h"
+#import "WechatAgent.h"
+#import "Utils.h"
+
+
+
+

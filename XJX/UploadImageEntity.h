@@ -1,0 +1,18 @@
+//
+//  UploadImageEntity.h
+//  XJX
+//
+//  Created by Cai8 on 16/1/7.
+//  Copyright © 2016年 Cai8. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface UploadImageEntity : NSObject
+
+@property (nonatomic,copy) NSString *ori_image_url;
+@property (nonatomic,copy) NSString *tiny_thumb_image_url;
+@property (nonatomic,copy) NSString *medium_thumb_image_url;
+@property (nonatomic,copy) NSString *big_thumb_image_url;
+
+@end

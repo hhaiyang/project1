@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,width=device-width,user-scalable=no"/>
+    </head>
+    <body>
+        <style>
+        body,html{
+            padding : 0;
+            margin : 0;
+        }
+        body{
+            font-family: 'Microsoft Yahei';
+        }
+        .container{
+            padding : 0px 15px;
+            text-align:justify;
+            font-size : 14px !important;
+        }
+        .container img{
+            width : 100% !important;
+        }
+        .container p{
+            font-size: 14px !important;
+        }
+        a{
+            text-decoration : none;
+            font-size : 14px !important;
+        }
+        </style>
+        <div class="container">
+            #htmlcontent
+        </div>
+        <script>
+            function GetContentHeight(){
+                var message = {scrollingHeight : document.body.scrollHeight};
+                window.webkit.messageHandlers.scrolling.postMessage(message);
+            }
+        </script>
+    </body>
+</html>
